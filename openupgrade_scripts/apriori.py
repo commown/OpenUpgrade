@@ -11,7 +11,8 @@ renamed_modules = {
     "pos_sale_gift_card": "pos_sale_loyalty",
     "sale_coupon": "sale_loyalty",
     "sale_coupon_delivery": "sale_loyalty_delivery",
-    "website_sale_coupon": "website_sale_loyalty",
+    # Commown fork : Do not rename website_sale_coupon module
+    # "website_sale_coupon": "website_sale_loyalty",
     "website_sale_coupon_delivery": "website_sale_loyalty_delivery",
     # odoo/enterprise
     "helpdesk_sale_coupon": "helpdesk_sale_loyalty",
