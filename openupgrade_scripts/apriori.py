@@ -11,6 +11,9 @@ renamed_modules = {
     "mail_client_extension": "mail_plugin",
     "payment_ingenico": "payment_ogone",
     "website_mail_channel": "website_mail_group",
+    # Commown fork : Rename module from Akretion's odoo-usability repo.
+    # to avoid a conflict
+    "account_usability": "account_usability_akretion",
     # OCA/account-financial-tools
     "account_menu": "account_usability",
     # OCA/account-fiscal-rule
