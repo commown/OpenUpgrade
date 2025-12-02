@@ -1,4 +1,19 @@
+import logging
+
 from openupgradelib import openupgrade
+
+_logger = logging.getLogger(__name__)
+
+
+def _recompute_journal_payment_method_lines(env):
+    """
+    Commown fork: Re-computing payment_method_lines,
+    in order to correctly create method lines related to electronic methods.
+    """
+    _logger.info("[Commown] Re-computing payment method lines for all journals.")
+    all_journals = env["account.journal"].search([])
+    all_journals._compute_inbound_payment_method_line_ids()
+    all_journals._compute_outbound_payment_method_line_ids()
 
 
 def _fill_account_analytic_line_category(env):
@@ -90,3 +105,6 @@ def migrate(env, version):
         [("module", "=", "website_legal_page"), ("name", "=", "legal_page")]
     ):
         _handle_website_legal_page(env)
+
+    # Commown fork
+    _recompute_journal_payment_method_lines(env)
